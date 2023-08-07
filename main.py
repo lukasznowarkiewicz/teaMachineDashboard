@@ -10,6 +10,7 @@ class App(customtkinter.CTk):
         self.title("teaMachineDashboard.py")
         self.geometry("1024x600")
         self.bind("<Escape>", self.toggle_fullscreen)
+        customtkinter.set_appearance_mode("Dark")
         
         # set grid layout 1x2
         self.grid_rowconfigure(0, weight=1)
@@ -73,9 +74,10 @@ class App(customtkinter.CTk):
                                                       image=self.add_user_image, anchor="w", command=self.frame_3_button_event)
         self.frame_7_button.grid(row=7, column=0, sticky="ew")
 
-        self.appearance_mode_menu = customtkinter.CTkOptionMenu(self.navigation_frame, values=["Light", "Dark", "System"],
-                                                                command=self.change_appearance_mode_event)
-        self.appearance_mode_menu.grid(row=8, column=0, padx=20, pady=20, sticky="s")
+        self.frame_8_button = customtkinter.CTkButton(self.navigation_frame, corner_radius=0, height=40, border_spacing=10, text="Settings",
+                                                      fg_color="transparent", text_color=("gray10", "gray90"), hover_color=("gray70", "gray30"),
+                                                      image=self.add_user_image, anchor="w", command=self.frame_3_button_event)
+        self.frame_8_button.grid(row=8, column=0, sticky="s")
 
         # create home frame on the right - main window
         self.home_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
@@ -141,9 +143,6 @@ class App(customtkinter.CTk):
 
     def frame_3_button_event(self):
         self.select_frame_by_name("frame_3")
-
-    def change_appearance_mode_event(self, new_appearance_mode):
-        customtkinter.set_appearance_mode(new_appearance_mode)
 
 
 if __name__ == "__main__":
