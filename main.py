@@ -2,6 +2,15 @@ import customtkinter
 import os
 from PIL import Image
 
+class LoadingWindow(customtkinter.CTkToplevel):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.title("loading")
+        self.geometry("1024x600")
+        customtkinter.set_appearance_mode("Dark")
+        self.attributes('-fullscreen', True)
+        self.label = customtkinter.CTkLabel(self, text="Loading")
+        self.label.pack(padx=20, pady=20)
 
 class App(customtkinter.CTk):
     def __init__(self):
@@ -12,13 +21,15 @@ class App(customtkinter.CTk):
         self.bind("<Escape>", self.toggle_fullscreen)
         customtkinter.set_appearance_mode("Dark")
         
+        # loading = LoadingWindow()
+        # loading.after(5000, loading.destroy)
+
         # set grid layout 1x2
         self.grid_rowconfigure(0, weight=1)
         self.grid_columnconfigure(1, weight=1)
 
         # load images with light and dark mode image
         image_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "images")
-        icon_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), )
         self.logo_image = customtkinter.CTkImage(Image.open(os.path.join(image_path, "CustomTkinter_logo_single.png")), size=(26, 26))
         self.large_test_image = customtkinter.CTkImage(Image.open(os.path.join(image_path, "large_test_image.png")), size=(500, 150))
         self.image_icon_image = customtkinter.CTkImage(Image.open(os.path.join(image_path, "image_icon_light.png")), size=(20, 20))
@@ -79,12 +90,14 @@ class App(customtkinter.CTk):
                                                       image=self.add_user_image, anchor="w", command=self.frame_3_button_event)
         self.frame_8_button.grid(row=8, column=0, sticky="s")
 
+
+
         # create home frame on the right - main window
         self.home_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
-        self.home_frame.grid_columnconfigure(0, weight=1)
+        self.home_frame.grid(row=0, column=0, sticky="nsew")
+        self.home_frame.grid_columnconfigure(6, weight=1)
+        self.home_frame.grid_rowconfigure(3, weight=1)
 
-        self.home_frame_large_image_label = customtkinter.CTkLabel(self.home_frame, text="", image=self.large_test_image)
-        self.home_frame_large_image_label.grid(row=0, column=0, padx=20, pady=10)
 
         self.home_frame_button_1 = customtkinter.CTkButton(self.home_frame, text="Black Tea", image=self.blackTeaImage, compound="top", font=("arial", 18), border_spacing=10)
         self.home_frame_button_1.grid(row=1, column=0, padx=30, pady=20)
@@ -101,12 +114,31 @@ class App(customtkinter.CTk):
             # self.home
             pass
 
-        # create second frame
-        self.second_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
+        # frame frame "Water base"
+        self.waterBase_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
 
-        # create third frame
-        self.third_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
+        # create frame "Brewing"
+        self.brewing_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
 
+        # create frame "Sweetness"
+        self.sweetness_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
+
+        # create frame "Solid Additives"
+        self.solidAdditives_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
+
+        # create frame "Liquid Additives"
+        self.liquidAdditives_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
+
+        # create frame "Done"
+        self.done_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
+
+        # create frame "Settings"
+        self.settings_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
+
+        # create frame "Manual Control"
+        self.manualControl_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
+        
+        
         # select default frame
         self.select_frame_by_name("home")
 
@@ -122,13 +154,13 @@ class App(customtkinter.CTk):
         else:
             self.home_frame.grid_forget()
         if name == "frame_2":
-            self.second_frame.grid(row=0, column=1, sticky="nsew")
+            self.waterBase_frame.grid(row=0, column=1, sticky="nsew")
         else:
-            self.second_frame.grid_forget()
+            self.waterBase_frame.grid_forget()
         if name == "frame_3":
-            self.third_frame.grid(row=0, column=1, sticky="nsew")
+            self.brewing_frame.grid(row=0, column=1, sticky="nsew")
         else:
-            self.third_frame.grid_forget()
+            self.brewing_frame.grid_forget()
 
     def toggle_fullscreen(self, event=None):
         is_fullscreen = self.attributes('-fullscreen')
