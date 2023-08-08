@@ -99,14 +99,14 @@ class App(customtkinter.CTk):
         self.home_frame.grid_rowconfigure(3, weight=1)
 
 
-        # self.home_frame_button_1 = customtkinter.CTkButton(self.home_frame, text="Black Tea", image=self.blackTeaImage, compound="top", font=("arial", 18), border_spacing=10)
-        # self.home_frame_button_1.grid(row=1, column=0, padx=30, pady=20)
-        # self.home_frame_button_2 = customtkinter.CTkButton(self.home_frame, text="Black Tea", image=self.blackTeaImage, compound="top", font=("arial", 18), border_spacing=10)
-        # self.home_frame_button_2.grid(row=2, column=0, padx=30, pady=20)
-        # self.home_frame_button_3 = customtkinter.CTkButton(self.home_frame, text="Black Tea", image=self.blackTeaImage, compound="top", font=("arial", 18), border_spacing=10)
-        # self.home_frame_button_3.grid(row=1, column=1, padx=30, pady=20)
-        # self.home_frame_button_4 = customtkinter.CTkButton(self.home_frame, text="Black Tea", image=self.blackTeaImage, compound="top", font=("arial", 18), border_spacing=10)
-        # self.home_frame_button_4.grid(row=2, column=1, padx=30, pady=20)
+        self.home_frame_button_1 = customtkinter.CTkButton(self.home_frame, text="Black Tea", image=self.blackTeaImage, compound="top", font=("arial", 18), border_spacing=10)
+        self.home_frame_button_1.grid(row=1, column=0, padx=30, pady=20)
+        self.home_frame_button_2 = customtkinter.CTkButton(self.home_frame, text="Black Tea 2", image=self.blackTeaImage, compound="top", font=("arial", 18), border_spacing=10)
+        self.home_frame_button_2.grid(row=2, column=0, padx=30, pady=20)
+        self.home_frame_button_3 = customtkinter.CTkButton(self.home_frame, text="Black Tea 3", image=self.blackTeaImage, compound="top", font=("arial", 18), border_spacing=10)
+        self.home_frame_button_3.grid(row=1, column=1, padx=30, pady=20)
+        self.home_frame_button_4 = customtkinter.CTkButton(self.home_frame, text="Black Tea 4", image=self.blackTeaImage, compound="top", font=("arial", 18), border_spacing=10)
+        self.home_frame_button_4.grid(row=2, column=1, padx=30, pady=20)
 
         teaList = {"blackTea", "cherryTea", "greenTea"}
 
