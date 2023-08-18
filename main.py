@@ -34,6 +34,14 @@ class App(customtkinter.CTk):
         self.large_test_image = customtkinter.CTkImage(Image.open(os.path.join(image_path, "large_test_image.png")), size=(500, 150))
         self.image_icon_image = customtkinter.CTkImage(Image.open(os.path.join(image_path, "image_icon_light.png")), size=(20, 20))
         self.blackTeaImage = customtkinter.CTkImage(Image.open(os.path.join(image_path, "BlackTea.png")), size=(120, 120))
+        self.BlackTeaWithLemonImage = customtkinter.CTkImage(Image.open(os.path.join(image_path, "BlackTeaWithLemon.png")), size=(120, 120))
+        self.ChamomoileTeaImage = customtkinter.CTkImage(Image.open(os.path.join(image_path, "ChamomoileTea.png")), size=(120, 120))
+        self.CherryTeaImage = customtkinter.CTkImage(Image.open(os.path.join(image_path, "CherryTea.png")), size=(120, 120))
+        self.FruitsTeaImage = customtkinter.CTkImage(Image.open(os.path.join(image_path, "FruitsTea.png")), size=(120, 120))
+        self.GreenTeaWithOrangeImage = customtkinter.CTkImage(Image.open(os.path.join(image_path, "GreenTeaWithOrange.png")), size=(120, 120))
+        self.MatchaTeaImage = customtkinter.CTkImage(Image.open(os.path.join(image_path, "MatchaTea.png")), size=(120, 120))
+        self.RaspberryTeaImage = customtkinter.CTkImage(Image.open(os.path.join(image_path, "RaspberryTea.png")), size=(120, 120))
+        self.StrawberryTeaImage = customtkinter.CTkImage(Image.open(os.path.join(image_path, "StrawberryTea.png")), size=(120, 120))
         self.home_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(image_path, "home_dark.png")),
                                                  dark_image=Image.open(os.path.join(image_path, "home_light.png")), size=(20, 20))
         self.chat_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(image_path, "chat_dark.png")),
@@ -44,7 +52,7 @@ class App(customtkinter.CTk):
         # create navigation frame on the left
         self.navigation_frame = customtkinter.CTkFrame(self, corner_radius=0)
         self.navigation_frame.grid(row=0, column=0, sticky="nsew")
-        self.navigation_frame.grid_rowconfigure(8, weight=1)
+        self.navigation_frame.grid_rowconfigure(9, weight=1)
 
         self.navigation_frame_label = customtkinter.CTkLabel(self.navigation_frame, text="  Tea machine", image=self.logo_image,
                                                              compound="left", font=customtkinter.CTkFont(size=15, weight="bold"))
@@ -68,32 +76,32 @@ class App(customtkinter.CTk):
         self.frame_3_button = customtkinter.CTkButton(self.navigation_frame, corner_radius=0, height=40, border_spacing=10, text="Brewing",
                                                       fg_color="transparent", text_color=("gray10", "gray90"), hover_color=("gray70", "gray30"),
                                                       image=self.add_user_image, anchor="w", command=self.frame_3_button_event)
-        self.frame_3_button.grid(row=3, column=0, sticky="ew")
+        self.frame_3_button.grid(row=4, column=0, sticky="ew")
 
         self.frame_4_button = customtkinter.CTkButton(self.navigation_frame, corner_radius=0, height=40, border_spacing=10, text="Sweetness",
                                                       fg_color="transparent", text_color=("gray10", "gray90"), hover_color=("gray70", "gray30"),
                                                       image=self.add_user_image, anchor="w", command=self.frame_4_button_event)
-        self.frame_4_button.grid(row=4, column=0, sticky="ew")
+        self.frame_4_button.grid(row=5, column=0, sticky="ew")
 
         self.frame_5_button = customtkinter.CTkButton(self.navigation_frame, corner_radius=0, height=40, border_spacing=10, text="Solid additives",
                                                       fg_color="transparent", text_color=("gray10", "gray90"), hover_color=("gray70", "gray30"),
                                                       image=self.add_user_image, anchor="w", command=self.frame_5_button_event)
-        self.frame_5_button.grid(row=5, column=0, sticky="ew")
+        self.frame_5_button.grid(row=6, column=0, sticky="ew")
 
         self.frame_6_button = customtkinter.CTkButton(self.navigation_frame, corner_radius=0, height=40, border_spacing=10, text="Liquid Additives",
                                                       fg_color="transparent", text_color=("gray10", "gray90"), hover_color=("gray70", "gray30"),
                                                       image=self.add_user_image, anchor="w", command=self.frame_6_button_event)
-        self.frame_6_button.grid(row=6, column=0, sticky="ew")
+        self.frame_6_button.grid(row=7, column=0, sticky="ew")
 
         self.frame_7_button = customtkinter.CTkButton(self.navigation_frame, corner_radius=0, height=40, border_spacing=10, text="Done",
                                                       fg_color="transparent", text_color=("gray10", "gray90"), hover_color=("gray70", "gray30"),
                                                       image=self.add_user_image, anchor="w", command=self.frame_7_button_event)
-        self.frame_7_button.grid(row=7, column=0, sticky="ew")
+        self.frame_7_button.grid(row=8, column=0, sticky="ew")
 
         self.frame_8_button = customtkinter.CTkButton(self.navigation_frame, corner_radius=0, height=40, border_spacing=10, text="Settings",
                                                       fg_color="transparent", text_color=("gray10", "gray90"), hover_color=("gray70", "gray30"),
                                                       image=self.add_user_image, anchor="w", command=self.frame_8_button_event)
-        self.frame_8_button.grid(row=8, column=0, sticky="esw")
+        self.frame_8_button.grid(row=9, column=0, sticky="esw")
 
 
 
