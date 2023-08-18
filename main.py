@@ -88,7 +88,7 @@ class App(customtkinter.CTk):
                                                       image=self.add_user_image, anchor="w", command=self.frame_5_button_event)
         self.frame_5_button.grid(row=6, column=0, sticky="ew")
 
-        self.frame_6_button = customtkinter.CTkButton(self.navigation_frame, corner_radius=0, height=40, border_spacing=10, text="Liquid Additives",
+        self.frame_6_button = customtkinter.CTkButton(self.navigation_frame, corner_radius=0, height=40, border_spacing=0, text="Liquid Additives",
                                                       fg_color="transparent", text_color=("gray10", "gray90"), hover_color=("gray70", "gray30"),
                                                       image=self.add_user_image, anchor="w", command=self.frame_6_button_event)
         self.frame_6_button.grid(row=7, column=0, sticky="ew")
@@ -112,25 +112,25 @@ class App(customtkinter.CTk):
         self.home_frame.rowconfigure(1, weight=1)
 
         self.home_frame_button_1 = customtkinter.CTkButton(self.home_frame, text="Black Tea", image=self.blackTeaImage, compound="top", font=("arial", 18), border_spacing=10)
-        self.home_frame_button_1.grid(row=0, column=0, padx=30, pady=20)
-        self.home_frame_button_2 = customtkinter.CTkButton(self.home_frame, text="Black Tea 2", image=self.blackTeaImage, compound="top", font=("arial", 18), border_spacing=10)
-        self.home_frame_button_2.grid(row=1, column=0, padx=30, pady=20)
-        self.home_frame_button_3 = customtkinter.CTkButton(self.home_frame, text="Green Tea", image=self.blackTeaImage, compound="top", font=("arial", 18), border_spacing=10)
-        self.home_frame_button_3.grid(row=0, column=1, padx=30, pady=20)
-        self.home_frame_button_4 = customtkinter.CTkButton(self.home_frame, text="Black Tea", image=self.blackTeaImage, compound="top", font=("arial", 18), border_spacing=10)
-        self.home_frame_button_4.grid(row=1, column=1, padx=30, pady=20)
-        self.home_frame_button_5 = customtkinter.CTkButton(self.home_frame, text="Black Tea 3", image=self.blackTeaImage, compound="top", font=("arial", 18), border_spacing=10)
-        self.home_frame_button_5.grid(row=0, column=2, padx=30, pady=20)
-        self.home_frame_button_6 = customtkinter.CTkButton(self.home_frame, text="Green Tea", image=self.blackTeaImage, compound="top", font=("arial", 18), border_spacing=10)
-        self.home_frame_button_6.grid(row=1, column=2, padx=30, pady=20)
-        self.home_frame_button_7 = customtkinter.CTkButton(self.home_frame, text="Green Tea", image=self.blackTeaImage, compound="top", font=("arial", 18), border_spacing=10)
-        self.home_frame_button_7.grid(row=0, column=3, padx=30, pady=20)
-        self.home_frame_button_8 = customtkinter.CTkButton(self.home_frame, text="Black Tea", image=self.blackTeaImage, compound="top", font=("arial", 18), border_spacing=10)
-        self.home_frame_button_8.grid(row=1, column=3, padx=30, pady=20)
-        self.home_frame_button_9 = customtkinter.CTkButton(self.home_frame, text="Green Tea", image=self.blackTeaImage, compound="top", font=("arial", 18), border_spacing=10)
-        self.home_frame_button_9.grid(row=0, column=4, padx=30, pady=20)
-        self.home_frame_button_10 = customtkinter.CTkButton(self.home_frame, text="Black Tea10", image=self.blackTeaImage, compound="top", font=("arial", 18), border_spacing=10)
-        self.home_frame_button_10.grid(row=1, column=4, padx=30, pady=20)
+        self.home_frame_button_1.grid(row=0, column=0, padx=0, pady=0)
+        self.home_frame_button_2 = customtkinter.CTkButton(self.home_frame, text="Black Tea with lemon", image=self.BlackTeaWithLemonImage, compound="top", font=("arial", 18), border_spacing=10)
+        self.home_frame_button_2.grid(row=1, column=0, padx=0, pady=0)
+        self.home_frame_button_3 = customtkinter.CTkButton(self.home_frame, text="Chamomoile Tea", image=self.ChamomoileTeaImage, compound="top", font=("arial", 18), border_spacing=10)
+        self.home_frame_button_3.grid(row=0, column=1, padx=0, pady=0)
+        self.home_frame_button_4 = customtkinter.CTkButton(self.home_frame, text="Cherry Tea", image=self.CherryTeaImage, compound="top", font=("arial", 18), border_spacing=10)
+        self.home_frame_button_4.grid(row=1, column=1, padx=0, pady=0)
+        self.home_frame_button_5 = customtkinter.CTkButton(self.home_frame, text="Fruits Tea", image=self.FruitsTeaImage, compound="top", font=("arial", 18), border_spacing=10)
+        self.home_frame_button_5.grid(row=0, column=2, padx=0, pady=0)
+        self.home_frame_button_6 = customtkinter.CTkButton(self.home_frame, text="Green Tea with orange", image=self.GreenTeaWithOrangeImage, compound="top", font=("arial", 18), border_spacing=10)
+        self.home_frame_button_6.grid(row=1, column=2, padx=0, pady=0)
+        self.home_frame_button_7 = customtkinter.CTkButton(self.home_frame, text="Matcha Tea", image=self.MatchaTeaImage, compound="top", font=("arial", 18), border_spacing=10)
+        self.home_frame_button_7.grid(row=0, column=3, padx=0, pady=0)
+        self.home_frame_button_8 = customtkinter.CTkButton(self.home_frame, text="Raspberry Tea", image=self.RaspberryTeaImage, compound="top", font=("arial", 18), border_spacing=10)
+        self.home_frame_button_8.grid(row=1, column=3, padx=0, pady=0)
+        self.home_frame_button_9 = customtkinter.CTkButton(self.home_frame, text="Strawberry Tea", image=self.StrawberryTeaImage, compound="top", font=("arial", 18), border_spacing=10)
+        self.home_frame_button_9.grid(row=0, column=4, padx=0, pady=0)
+        self.home_frame_button_10 = customtkinter.CTkButton(self.home_frame, text="Herbata+", image=self.blackTeaImage, compound="top", font=("arial", 18), border_spacing=10)
+        self.home_frame_button_10.grid(row=1, column=4, padx=0, pady=0)
 
 
          # create description_tea frame on the right - main window
