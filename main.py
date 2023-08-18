@@ -58,7 +58,7 @@ class App(customtkinter.CTk):
         self.home_button_description = customtkinter.CTkButton(self.navigation_frame, corner_radius=0, height=20, border_spacing=10, text="Tea description",
                                                    fg_color="transparent", text_color=("gray10", "gray90"), hover_color=("gray70", "gray30"),
                                                    image=self.home_image, anchor="w", command=self.home_button_description_event, font=customtkinter.CTkFont(size=12))
-        self.home_button_description.grid(row=10, column=0, sticky="ew")
+        self.home_button_description.grid(row=2, column=0, sticky="ew")
 
         self.frame_2_button = customtkinter.CTkButton(self.navigation_frame, corner_radius=0, height=40, border_spacing=10, text="Water base",
                                                       fg_color="transparent", text_color=("gray10", "gray90"), hover_color=("gray70", "gray30"),
