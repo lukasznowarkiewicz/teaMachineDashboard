@@ -104,33 +104,40 @@ class App(customtkinter.CTk):
         self.frame_8_button.grid(row=9, column=0, sticky="esw")
 
 
-
         # create home frame on the right - main window
         self.home_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
         self.home_frame.grid(row=0, column=0, sticky="nesw")
-        self.home_frame.columnconfigure(5, weight=1)
-        self.home_frame.rowconfigure(1, weight=1)
 
-        self.home_frame_button_1 = customtkinter.CTkButton(self.home_frame, text="Black Tea", image=self.blackTeaImage, compound="top", font=("arial", 18), border_spacing=10)
-        self.home_frame_button_1.grid(row=0, column=0, padx=0, pady=0)
-        self.home_frame_button_2 = customtkinter.CTkButton(self.home_frame, text="Black Tea with lemon", image=self.BlackTeaWithLemonImage, compound="top", font=("arial", 18), border_spacing=10)
-        self.home_frame_button_2.grid(row=1, column=0, padx=0, pady=0)
-        self.home_frame_button_3 = customtkinter.CTkButton(self.home_frame, text="Chamomoile Tea", image=self.ChamomoileTeaImage, compound="top", font=("arial", 18), border_spacing=10)
-        self.home_frame_button_3.grid(row=0, column=1, padx=0, pady=0)
-        self.home_frame_button_4 = customtkinter.CTkButton(self.home_frame, text="Cherry Tea", image=self.CherryTeaImage, compound="top", font=("arial", 18), border_spacing=10)
-        self.home_frame_button_4.grid(row=1, column=1, padx=0, pady=0)
-        self.home_frame_button_5 = customtkinter.CTkButton(self.home_frame, text="Fruits Tea", image=self.FruitsTeaImage, compound="top", font=("arial", 18), border_spacing=10)
-        self.home_frame_button_5.grid(row=0, column=2, padx=0, pady=0)
-        self.home_frame_button_6 = customtkinter.CTkButton(self.home_frame, text="Green Tea with orange", image=self.GreenTeaWithOrangeImage, compound="top", font=("arial", 18), border_spacing=10)
-        self.home_frame_button_6.grid(row=1, column=2, padx=0, pady=0)
-        self.home_frame_button_7 = customtkinter.CTkButton(self.home_frame, text="Matcha Tea", image=self.MatchaTeaImage, compound="top", font=("arial", 18), border_spacing=10)
-        self.home_frame_button_7.grid(row=0, column=3, padx=0, pady=0)
-        self.home_frame_button_8 = customtkinter.CTkButton(self.home_frame, text="Raspberry Tea", image=self.RaspberryTeaImage, compound="top", font=("arial", 18), border_spacing=10)
-        self.home_frame_button_8.grid(row=1, column=3, padx=0, pady=0)
-        self.home_frame_button_9 = customtkinter.CTkButton(self.home_frame, text="Strawberry Tea", image=self.StrawberryTeaImage, compound="top", font=("arial", 18), border_spacing=10)
-        self.home_frame_button_9.grid(row=0, column=4, padx=0, pady=0)
-        self.home_frame_button_10 = customtkinter.CTkButton(self.home_frame, text="Herbata+", image=self.blackTeaImage, compound="top", font=("arial", 18), border_spacing=10)
-        self.home_frame_button_10.grid(row=1, column=4, padx=0, pady=0)
+        # Configure rows and columns for equal distribution
+        for col in range(5): # 5 columns
+            self.home_frame.columnconfigure(col, weight=1)
+
+        for row in range(2): # 2 rows
+            self.home_frame.rowconfigure(row, weight=1)
+
+        # Button creation and placement with added padding
+        padding_x = 5
+        padding_y = 5
+
+        buttons = [
+            ("Black Tea\n", self.blackTeaImage),
+            ("Black Tea\nwith lemon", self.BlackTeaWithLemonImage),
+            ("Chamomoile\nTea", self.ChamomoileTeaImage),
+            ("Cherry Tea\n", self.CherryTeaImage),
+            ("Fruits Tea\n", self.FruitsTeaImage),
+            ("Green Tea\nwith orange", self.GreenTeaWithOrangeImage),
+            ("Matcha Tea\n", self.MatchaTeaImage),
+            ("Raspberry\nTea", self.RaspberryTeaImage),
+            ("Strawberry\nTea", self.StrawberryTeaImage),
+            ("Herbata+\n", self.blackTeaImage)
+        ]
+
+
+
+        for idx, (text, image) in enumerate(buttons):
+            btn = customtkinter.CTkButton(self.home_frame, text=text, image=image, compound="top", font=("arial", 18), border_spacing=10)
+            btn.grid(row=idx//5, column=idx%5, padx=padding_x, pady=padding_y)
+
 
 
          # create description_tea frame on the right - main window
