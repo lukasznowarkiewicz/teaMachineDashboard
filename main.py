@@ -1,5 +1,6 @@
 import customtkinter
 import os
+import json
 from PIL import Image
 
 class LoadingWindow(customtkinter.CTkToplevel):
@@ -21,12 +22,17 @@ class App(customtkinter.CTk):
         self.bind("<Escape>", self.toggle_fullscreen)
         customtkinter.set_appearance_mode("Dark")
         
+
         # loading = LoadingWindow()
         # loading.after(5000, loading.destroy)
 
         # set grid layout 1x2
         self.grid_rowconfigure(0, weight=1)
         self.grid_columnconfigure(1, weight=1)
+
+        # Wczytaj dane z pliku JSON
+        with open('buttons.json', 'r') as plik_json:
+            buttons_data = json.load(plik_json)
 
         # load images with light and dark mode image
         image_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "images")
@@ -119,24 +125,14 @@ class App(customtkinter.CTk):
         padding_x = 5
         padding_y = 5
 
-        buttons = [
-            ("Black Tea\n", self.blackTeaImage),
-            ("Black Tea\nwith lemon", self.BlackTeaWithLemonImage),
-            ("Chamomoile\nTea", self.ChamomoileTeaImage),
-            ("Cherry Tea\n", self.CherryTeaImage),
-            ("Fruits Tea\n", self.FruitsTeaImage),
-            ("Green Tea\nwith orange", self.GreenTeaWithOrangeImage),
-            ("Matcha Tea\n", self.MatchaTeaImage),
-            ("Raspberry\nTea", self.RaspberryTeaImage),
-            ("Strawberry\nTea", self.StrawberryTeaImage),
-            ("Herbata+\n", self.blackTeaImage)
-        ]
+        
 
-
-
-        for idx, (text, image) in enumerate(buttons):
-            btn = customtkinter.CTkButton(self.home_frame, text=text, image=image, compound="top", font=("arial", 18), border_spacing=10)
-            btn.grid(row=idx//5, column=idx%5, padx=padding_x, pady=padding_y)
+        for idx, button_data in enumerate(buttons_data):
+            self.image = customtkinter.CTkImage(Image.open(os.path.join(image_path, button_data["image"])), size=(120, 120))
+            label = button_data["label"]
+            #image = button_data["image"]
+            btn = customtkinter.CTkButton(self.home_frame, text=label, image=self.image, compound="top", font=("arial", 18), border_spacing=10)
+            btn.grid(row=idx // 5, column=idx % 5, padx=padding_x, pady=padding_y)
 
 
 
