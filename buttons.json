@@ -2,6 +2,41 @@
     {
         "label": "Black Tea",
         "image": "BlackTea.png"
+    },
+    {
+        "label": "Black Tea with Lemon",
+        "image": "BlackTeaWithLemon.png"
+    },
+    {
+        "label": "Chamomile Tea",
+        "image": "ChamomoileTea.png"
+    },
+    {
+        "label": "Cherry Tea",
+        "image": "CherryTea.png"
+    },
+    {
+        "label": "Fruits Tea",
+        "image": "FruitsTea.png"
+    },
+    {
+        "label": "Green Tea with Orange",
+        "image": "GreenTeaWithOrange.png"
+    },
+    {
+        "label": "Matcha Tea",
+        "image": "MatchaTea.png"
+    },
+    {
+        "label": "Raspberry Tea",
+        "image": "RaspberryTea.png"
+    },
+    {
+        "label": "Strawberry Tea",
+        "image": "StrawberryTea.png"
+    },
+    {
+        "label": "Herbata+",
+        "image": "blackTea.png"
     }
-    
 ]

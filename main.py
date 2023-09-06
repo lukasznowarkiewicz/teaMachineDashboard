@@ -39,15 +39,7 @@ class App(customtkinter.CTk):
         self.logo_image = customtkinter.CTkImage(Image.open(os.path.join(image_path, "CustomTkinter_logo_single.png")), size=(26, 26))
         self.large_test_image = customtkinter.CTkImage(Image.open(os.path.join(image_path, "large_test_image.png")), size=(500, 150))
         self.image_icon_image = customtkinter.CTkImage(Image.open(os.path.join(image_path, "image_icon_light.png")), size=(20, 20))
-        self.blackTeaImage = customtkinter.CTkImage(Image.open(os.path.join(image_path, "BlackTea.png")), size=(120, 120))
-        self.BlackTeaWithLemonImage = customtkinter.CTkImage(Image.open(os.path.join(image_path, "BlackTeaWithLemon.png")), size=(120, 120))
-        self.ChamomoileTeaImage = customtkinter.CTkImage(Image.open(os.path.join(image_path, "ChamomoileTea.png")), size=(120, 120))
-        self.CherryTeaImage = customtkinter.CTkImage(Image.open(os.path.join(image_path, "CherryTea.png")), size=(120, 120))
-        self.FruitsTeaImage = customtkinter.CTkImage(Image.open(os.path.join(image_path, "FruitsTea.png")), size=(120, 120))
-        self.GreenTeaWithOrangeImage = customtkinter.CTkImage(Image.open(os.path.join(image_path, "GreenTeaWithOrange.png")), size=(120, 120))
-        self.MatchaTeaImage = customtkinter.CTkImage(Image.open(os.path.join(image_path, "MatchaTea.png")), size=(120, 120))
-        self.RaspberryTeaImage = customtkinter.CTkImage(Image.open(os.path.join(image_path, "RaspberryTea.png")), size=(120, 120))
-        self.StrawberryTeaImage = customtkinter.CTkImage(Image.open(os.path.join(image_path, "StrawberryTea.png")), size=(120, 120))
+
         self.home_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(image_path, "home_dark.png")),
                                                  dark_image=Image.open(os.path.join(image_path, "home_light.png")), size=(20, 20))
         self.chat_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(image_path, "chat_dark.png")),
