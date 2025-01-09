@@ -1,5 +1,6 @@
 
 # Tea Machine Dashboard
+![app view](images/app_view.png)
 
 A simple dashboard for controlling a tea machine, built using the `customtkinter` library. The app provides an interface for selecting different types of tea, water base, brewing options, sweetness level, solid and liquid additives, and other settings.
 
